@@ -10,10 +10,12 @@ import {
   Sparkles,
   Trophy,
   MessageCircle,
-  Globe
+  Globe,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/photo2.png";
+import resumeUrl from "@/assets/saumya_dhakad_resume.pdf";
 
 const ROLES = [
   "Competitive Programmer",
@@ -129,8 +131,7 @@ export function Hero() {
 
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-
-          Available for opportunities · Open to SDE roles 
+          Available for opportunities · Open to SDE roles
         </motion.div>
 
         <div className="mt-10 grid items-center gap-14 lg:grid-cols-[1fr_340px]">
@@ -196,7 +197,7 @@ export function Hero() {
               </Button>
 
               <Button variant="ghost" size="lg" asChild>
-                <a href="src\assets\saumya_dhakad_resume.pdf" download>
+                <a href={resumeUrl} download>
                   <Download className="size-4" />
                   Resume
                 </a>
@@ -235,7 +236,7 @@ export function Hero() {
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/50 bg-white/30 p-2 backdrop-blur-xl shadow-[0_20px_80px_rgba(124,149,255,0.18)]">
               <img
-                src="src\assets\photo2.png"
+                src={profilePhoto}
                 alt="Saumya Dhakad"
                 className="h-[420px] w-[320px] rounded-[1.5rem] object-cover"
               />
@@ -252,19 +253,19 @@ export function Hero() {
         >
           {STATS.map((s, i) => (
             <motion.div
-  key={s.label}
-  whileHover={{ y: -3 }}
-  transition={{ duration: 0.2 }}
-  className="rounded-xl border border-[#8ba8ff]/15 bg-white/45 backdrop-blur-xl shadow-[0_8px_30px_rgba(124,149,255,0.08)] p-5"
->
-  <div className="font-display text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-[#5f7dff] via-[#8d7dff] to-[#ec9fc1] bg-clip-text text-transparent">
-    {s.value}
-  </div>
+              key={s.label}
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.2 }}
+              className="rounded-xl border border-[#8ba8ff]/15 bg-white/45 backdrop-blur-xl shadow-[0_8px_30px_rgba(124,149,255,0.08)] p-5"
+            >
+              <div className="font-display text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-[#5f7dff] via-[#8d7dff] to-[#ec9fc1] bg-clip-text text-transparent">
+                {s.value}
+              </div>
 
-  <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-[#8b93a7]">
-    {s.label}
-  </div>
-</motion.div>
+              <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-[#8b93a7]">
+                {s.label}
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
